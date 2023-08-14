@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.5.0)
 project(27_3_company VERSION 0.1.0 LANGUAGES C CXX)
 
 set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
