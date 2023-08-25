@@ -19,7 +19,7 @@ public:
     Manager(unsigned int inNumber_of_workers){
         id = ++id; 
         for(int i = 0; i < number_of_workers; i++){
-            Employee* worker = new Employee();
+            Employee* worker = new Employee(this);
             workers[i] = worker;
         }
     };
@@ -31,5 +31,9 @@ public:
     };
 
     Employee* getWorkersAt(int index);
+    
+    int getId(){
+        return id;
+    } 
 
 };

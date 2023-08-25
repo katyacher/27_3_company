@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
-#include "team.h"
+#include "boss.h"
+#include "manager.h"
 #include "employee.h"
 
 int main(int, char**){
     std::cout << "Hello, from 27_3_company!\n";
 
-    std::vector<Team*> company;
+    Boss* company = new Boss();
 
     std::cout << "Let's create a company!\n";
     std::cout << "Enter the number of team: " << std::endl;
@@ -28,5 +29,5 @@ int main(int, char**){
     std::srand(command + team.getNumber());
     int taskCount = std::rand()%(team->workers.size() + 1);
 
-
+    delete company;
 }

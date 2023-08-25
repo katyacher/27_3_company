@@ -1,10 +1,16 @@
 #include <string>
+#include <cassert>
 
 class Employee{
     std::string name{"unknown"};
     bool busy = false;
     Manager::Type taskType;
+    class Manager* manager = nullptr;
  public:
+    Employee(class Manager* inManager): manager(inManager){
+        assert(inManager != nullptr);
+    }
+    
     bool isBusy(){
         return busy;
     }
@@ -17,6 +23,10 @@ class Employee{
     {
         taskType = taskType;
         busy = true;
+    }
+
+    int getIdTeam(){
+        return manager->getId();
     }
 };
    
