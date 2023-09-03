@@ -1,26 +1,34 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include "employee.h"
 
+class Employee;
 
 class Manager {
 
 public:
-    enum Type{
+    enum Task{
         A,
         B,
         C
     };
 
 private:
-    int id{0};
+    static unsigned int id;
+    unsigned int managerId{0};
     std::vector<Employee*> workers;//team
-    int number_of_workers;
+    int tasks{0};
+    unsigned int number_of_workers{0};
+    unsigned int free_workers{0};
     
 public: 
-    Manager(int inNumber_of_workers);
+    Manager();
     ~Manager();
 
+    Employee* addEmployee();
+    void addTask(unsigned int command);
+    unsigned int setTask_to_workers();
     int getId();
     
 };
