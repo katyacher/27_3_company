@@ -1,5 +1,7 @@
+#include <iostream>
 #include <vector>
 #include "employee.h"
+
 
 class Manager {
 
@@ -16,24 +18,9 @@ private:
     int number_of_workers;
     
 public: 
-    Manager(unsigned int inNumber_of_workers){
-        id = ++id; 
-        for(int i = 0; i < number_of_workers; i++){
-            Employee* worker = new Employee(this);
-            workers[i] = worker;
-        }
-    };
+    Manager(int inNumber_of_workers);
+    ~Manager();
 
-    ~Manager(){  
-        for(int i = 0; i < number_of_workers; i++){
-            delete workers[i];
-        }   
-    };
-
-    Employee* getWorkersAt(int index);
+    int getId();
     
-    int getId(){
-        return id;
-    } 
-
 };

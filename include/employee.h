@@ -1,6 +1,9 @@
 #include <string>
 #include <cassert>
 
+
+class Manager;
+
 class Employee{
     std::string name{"unknown"};
     bool busy = false;
