@@ -35,7 +35,7 @@ unsigned int Manager::setTask_to_workers(){
       
    for(int i = 0, j = 0; i < tasks && j < workers.size(); ++j){
       if(!workers[j]->isBusy()){
-          workers[j]->setTask(true, static_cast<Manager::Task>(std::rand()%3));
+          workers[j]->setTask(true, static_cast<Task>(std::rand()%3));
           ++free_workers;
           ++i;
           workers[j]->getTask(managerId);

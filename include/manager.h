@@ -8,11 +8,7 @@ class Employee;
 class Manager {
 
 public:
-    enum Task{
-        A,
-        B,
-        C
-    };
+    
 
 private:
     static unsigned int id;

@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "manager.h"
+#include "employee.h"
 
 class Manager;
 class Employee;

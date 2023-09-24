@@ -1,12 +1,13 @@
 #pragma once
 #include <string>
-#include "manager.h"
-class Manager;
+#include <iostream>
+#include "tasktype.h"
+
 
 class Employee{
     std::string name{"unknown"};
     bool busy {false};
-    Manager::Task taskType;
+    Task tasktype;
     //class Manager* manager = nullptr;
  public:
      /*  Employee(class Manager* inManager): manager(inManager){
@@ -15,7 +16,7 @@ class Employee{
     */
     bool isBusy();
     void setName(const std::string &name);
-    void setTask(bool work, Manager::Task inTaskType);
-    int getTask(const unsigned int managerId);
+    void setTask(bool work, Task inTasktype);
+    void getTask(const unsigned int managerId);
 };
    

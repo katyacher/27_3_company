@@ -8,21 +8,21 @@ void Employee::setName(const std::string &name){
     this->name = name;
 }
 
-void Employee::setTask(bool work, Manager::Task inTaskType){
-    taskType = inTaskType;
+void Employee::setTask(bool work, Task inTasktype){
+    tasktype = inTasktype;
     busy = true;
 }
 
-int Employee::getTask(const unsigned int managerId){
+void Employee::getTask(const unsigned int managerId){
     std::string type;
-    switch (taskType){
-    case Manager::A:
+    switch (tasktype){
+    case A:
         type = "A";
         break;
-    case Manager::B:
+    case B:
         type = "B";
         break;
-    case Manager::C:
+    case C:
         type = "C";
         break;
     default:
