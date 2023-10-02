@@ -5,8 +5,14 @@
 
 unsigned int Manager::id{1};
 
-Manager::Manager(){
+Manager::Manager(int inCount_of_workers): number_of_workers(inCount_of_workers){
     managerId = id++; 
+
+    for(int i = 0; i < inCount_of_workers; i++){
+        Employee* worker = new Employee();
+        worker->setName("Worker " + std::to_string(i + 1));
+        workers.push_back(worker);
+    }
 };
 
 Manager::~Manager(){  
@@ -14,13 +20,6 @@ Manager::~Manager(){
         delete worker;
     }   
 };
-
-
-Employee* Manager::addEmployee(){
-   Employee * worker = new Employee;
-   workers.push_back(worker);
-   return worker;
-}
 
 void Manager::addTask(unsigned int command){
    std::srand(managerId + command);
@@ -45,8 +44,5 @@ unsigned int Manager::setTask_to_workers(){
    return free_workers;
 }
 
-int Manager::getId(){
-    return managerId;
-} 
 
     

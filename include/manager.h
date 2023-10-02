@@ -6,11 +6,6 @@
 class Employee;
 
 class Manager {
-
-public:
-    
-
-private:
     static unsigned int id;
     unsigned int managerId{0};
     std::vector<Employee*> workers;//team
@@ -19,12 +14,9 @@ private:
     unsigned int free_workers{0};
     
 public: 
-    Manager();
+    Manager(int inCount_of_workers);
     ~Manager();
 
-    Employee* addEmployee();
     void addTask(unsigned int command);
     unsigned int setTask_to_workers();
-    int getId();
-    
 };
