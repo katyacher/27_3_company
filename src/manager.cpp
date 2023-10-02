@@ -22,26 +22,26 @@ Manager::~Manager(){
 };
 
 void Manager::addTask(unsigned int command){
-   std::srand(managerId + command);
-   tasks = std::rand()%workers.size() + 1;
+    std::srand(managerId + command);
+    tasks = std::rand()%workers.size() + 1;
 }
 
 unsigned int Manager::setTask_to_workers(){
-   if(free_workers >= workers.size()){
+    if(free_workers >= workers.size()){
         std::cout<<"In the team № "<< managerId <<", all workers are busy" << std::endl;
         return 0;
-   }
+    }
       
    for(int i = 0, j = 0; i < tasks && j < workers.size(); ++j){
-      if(!workers[j]->isBusy()){
-          workers[j]->setTask(true, static_cast<Task>(std::rand()%3));
-          ++free_workers;
-          ++i;
-          workers[j]->getTask(managerId);
-      }     
-   }
+        if(!workers[j]->isBusy()){
+            workers[j]->setTask(true, std::rand()%3);
+            ++free_workers;
+            ++i;
+            workers[j]->getTaskInfo(managerId);
+        }     
+    }
 
-   return free_workers;
+    return free_workers;
 }
 
 

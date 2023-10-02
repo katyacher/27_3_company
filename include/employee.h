@@ -11,7 +11,7 @@ class Employee{
  public:
     bool isBusy();
     void setName(const std::string &name);
-    void setTask(bool work, Task inTasktype);
-    void getTask(const unsigned int managerId);
+    void setTask(bool work, int inTasktype);
+    void getTaskInfo(const unsigned int managerId);
 };
    

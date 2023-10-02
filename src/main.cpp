@@ -19,7 +19,7 @@ int main(int, char**){
         std::cout << "Enter a command: ";
         int command = 0;
         std::cin >> command;
-        busy_workers = boss->setBoss_command(command);
+        busy_workers = boss->setBossCommand(command);
     } while(busy_workers != 0);
     
     delete boss;

@@ -20,15 +20,15 @@ Boss::~Boss(){
     }
 }
 
-unsigned int Boss::setBoss_command(unsigned int command){
-    count_of_workers_in_each_team = 0;
+unsigned int Boss::setBossCommand(unsigned int command){
+    count_of_busy_workers = 0;
     
     for (auto team : teams){
             team->addTask(command);
-            count_of_workers_in_each_team += team->setTask_to_workers();
+            count_of_busy_workers += team->setTask_to_workers();
     }
     
-    return count_of_workers_in_each_team;
+    return count_of_busy_workers;
 }
 
 
