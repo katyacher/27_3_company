@@ -3,7 +3,6 @@
 #include <iostream>
 #include "tasktype.h"
 
-
 class Employee{
     std::string name{"unknown"};
     bool busy {false};
